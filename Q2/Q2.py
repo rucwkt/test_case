@@ -26,4 +26,4 @@ data = data[(data['# date']>=date_start)&(data['# date']<=date_end)&(data['url']
 
 
 print('Top 10 Filtered Records: \n', data.head(10), '\n')
-print('Total JPG file size from',date_start, 'to',date_end,':', convert_size(data['size'].sum()) , '\n')
+print('Total JPEG file size transfered from',date_start, 'to',date_end,':', convert_size(data['size'].sum()) , '\n')
