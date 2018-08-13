@@ -94,6 +94,6 @@ Question 2 will be `Repeat Event Percentage`, calculating number of repeat event
 Here it shows on July-14th to July-21th, user triggering same event repetitively much more than usual while submiting info.
 
 Question 3 will be `Event Summary Performance Report`, specifically showing view depth distribution (in histogram) and Event Summary page's conversion rate by date<br>
-.![](./Q4/Q4_3.jpg)<br>
+.![](./Q4/Q4_4.jpg)<br>
 Sample report showing comparing with early July, later version attracting user to slide down and staying much deeper (higher level + positive skewness), resulting a better conversion rate.<br>
 	
