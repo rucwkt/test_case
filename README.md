@@ -63,23 +63,37 @@ For question 1, assuming the UI design is clear and provide enough info for user
 (1) High <b>retention rate</b> (need to track <b>button click success</b> between each step)<br>
 (2) Less <b>time spent</b> between funnel (need <b>event trigger time</b>) <br>
 <br>
-For question 2, in addition to internal error report we have, any low loading time or un-detected error will highly likelly to cause user to <b>retry clicking</b> on same action/step. (need all meaningful actions within steps, calculate repeat event if an event with same property as previous one happens within 30 secs) <br>
+For question 2, in addition to internal error report we have, any low loading time or un-detected error will highly likelly to cause user to <b>retry clicking</b> on same action/step, also resulting longer time spent between funnel. (need all meaningful actions & trigger time within each funnel, calculate repeat event if an event with same property as previous one happens within 30 secs) <br>
 <br>
-For question 3, during whole purchase funnel, event summary is the step including most effective info & affecting user's initial purchase intention. How close the user <b>slide down to `Purchase Ticket`</b> and where did they drop off will indicate the performance. However, it can be either a design (product) issue or content (marketing) issue, to separate out it would be better used in A/B testing rather than standalone. (Need deepest <b>view depth</b> user slided down)<br>
+For question 3, during whole purchase funnel, event summary is the step including most effective info & affecting user's initial purchase intention. How close the user <b>viewed down to `Purchase Ticket`</b> and where did they drop off will indicate the performance. However, it can be either a design (product) issue or content (marketing) issue, to separate out it would be better used in A/B testing rather than standalone. (Need deepest <b>view depth</b> user slided down and stayed more than 5 seconds)<br>
 <br>
 <b>In summary, the tracking plan needed will be:</b> <br>
-	(1) Event summary: Deepest percentage of page each user slided down (view depth), purchase button click;<br>
+	(1) Event summary: Deepest percentage of page each user slided down & staying more than 5 seconds (view depth) & purchase button click;<br>
 	(2) Select price range: Price range selected;<br>
 	(3) Select seat: Seat selected, seat cancelled (both with seat number if possible) & seat confirmed; <br>
 	(4) Confirm & enter info: click on each input field & pay now button clicked; <br>
-	(5) Perform payment: Payment complete time; <br>
+	(5) Perform payment: Payment complete & redirect to next page; <br>
 	(6) Purchase complete: Purchase complete time. <br>
 	For all events above, trigger time, device type, user/device id should be included as common property.<br>
 
 #### Reporting
 Open folder `Q4`, and use tableau desktop to open `Q4.twb`. Sample data are generated with excel in Q4_data.xlsx.<br>
 4 Reports are created base on above data anwsering each question.<br>
-For question 1 will be `Overall Funnel Retention` showing aggregated retention rate for each funnel to compare across funnel, and `Funnel Status by Date` showing each funnel's retention/time spent within funnel across date to check if there is any obvious fluctuation.<br>
+
+For question 1 will be `Overall Funnel Retention` showing aggregated retention rate for each funnel to compare across funnel;
+.![](./Q4/Q4_1.jpg)<br>
+In sample data, it indicates overall funnel 1 will be the bottleneck of overall purchase funnel.
+<br>
+
+<br>and `Funnel Status by Date` showing each funnel's retention/time spent within funnel across date to check if there is any obvious fluctuation<br>.![](./Q4/Q4_2.jpg)<br>
+
+As in above picture, there is obvious performance drop on funnel 4, indicating low performance if for application version on respective period. Same for funnel 5, indicating third party vendor on payment loading much slower <br><br>
+
 Question 2 will be `Repeat Event Percentage`, calculating number of repeat event percentage of all events<br>
+.![](./Q4/Q4_3.jpg)<br>
+Here it shows on July-14th to July-21th, user triggering same event repetitively much more than usual while submiting info.
+
 Question 3 will be `Event Summary Performance Report`, specifically showing view depth distribution (in histogram) and Event Summary page's conversion rate by date<br>
+.![](./Q4/Q4_3.jpg)<br>
+Sample report showing comparing with early July, later version attracting user to slide down and staying much deeper (higher level + positive skewness), resulting a better conversion rate.<br>
 	
